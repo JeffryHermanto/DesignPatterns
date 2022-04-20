@@ -6,12 +6,17 @@ import com.jeffryhermanto.memento.Editor;
 import com.jeffryhermanto.memento.History;
 import com.jeffryhermanto.state.Canvas;
 import com.jeffryhermanto.state.SelectionTool;
+import com.jeffryhermanto.strategy.BlackAndWhiteFilter;
+import com.jeffryhermanto.strategy.ImageStorage;
+import com.jeffryhermanto.strategy.JpegCompressor;
+import com.jeffryhermanto.strategy.PngCompressor;
 
 public class Main {
     public static void main(String[] args) {
         runMementoPattern();
         runStatePattern();
         runIteratorPattern();
+        runStrategyPattern();
     }
 
     private static void runMementoPattern() {
@@ -62,6 +67,12 @@ public class Main {
             System.out.println(url);
             iterator.next();
         }
+    }
+
+    private static void runStrategyPattern() {
+        var imageStorage = new ImageStorage();
+        imageStorage.store("myImageFile", new JpegCompressor(), new BlackAndWhiteFilter());
+        imageStorage.store("myImageFile", new PngCompressor(), new BlackAndWhiteFilter());
     }
 }
 
