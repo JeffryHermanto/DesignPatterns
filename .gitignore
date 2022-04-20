@@ -36,4 +36,7 @@ out/
 *.ipr
 *.iws
 
-# End of https://www.toptal.com/developers/gitignore/api/java
+# macOS
+.DS_Store
+
+# End of https://www.toptal.com/developers/gitignore/api/java.DS_Store
