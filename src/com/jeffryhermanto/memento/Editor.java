@@ -8,7 +8,7 @@ public class Editor {
     }
 
     public void restore(EditorState state) {
-        content = state.getContent();
+        content = state.content();
     }
 
     public String getContent() {

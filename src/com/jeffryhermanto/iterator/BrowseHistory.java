@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BrowseHistory {
-    private List<String> urls = new ArrayList<>();
+    private final List<String> urls = new ArrayList<>();
 
     public void push(String url) {
         urls.add(url);
@@ -22,8 +22,8 @@ public class BrowseHistory {
         return new ListIterator(this);
     }
 
-    public class ListIterator implements Iterator {
-        private BrowseHistory history;
+    public static class ListIterator implements Iterator {
+        private final BrowseHistory history;
         private int index;
 
         public ListIterator(BrowseHistory history) {

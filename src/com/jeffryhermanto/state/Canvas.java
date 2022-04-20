@@ -1,8 +1,6 @@
 package com.jeffryhermanto.state;
 
 public class Canvas {
-
-
     private Tool currentTool;
 
     public void mouseDown() {
