@@ -10,6 +10,9 @@ import com.jeffryhermanto.strategy.BlackAndWhiteFilter;
 import com.jeffryhermanto.strategy.ImageStorage;
 import com.jeffryhermanto.strategy.JpegCompressor;
 import com.jeffryhermanto.strategy.PngCompressor;
+import com.jeffryhermanto.template.AuditTrail;
+import com.jeffryhermanto.template.Task;
+import com.jeffryhermanto.template.TransferMoneyTask;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +20,7 @@ public class Main {
         runStatePattern();
         runIteratorPattern();
         runStrategyPattern();
+        runTemplatePattern();
     }
 
     private static void runMementoPattern() {
@@ -73,6 +77,11 @@ public class Main {
         var imageStorage = new ImageStorage();
         imageStorage.store("myImageFile", new JpegCompressor(), new BlackAndWhiteFilter());
         imageStorage.store("myImageFile", new PngCompressor(), new BlackAndWhiteFilter());
+    }
+
+    private static void runTemplatePattern() {
+        var task = new TransferMoneyTask();
+        task.execute();
     }
 }
 
